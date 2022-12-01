@@ -1,9 +1,13 @@
 #include<stdio.h>
-float n1, n2;
-char op;
+
 int main(){
-	printf("CALCULADORA\n");
-	printf("Digite o primeiro numero:\n");
+	
+	float n1, n2;
+	char op;
+do{
+
+	printf("\nCALCULADORA\n");
+	printf("\nDigite o primeiro numero:\n");
 	scanf("%f", &n1);
 	printf("Digite a operacao |+, -, * ou /| \n");
 	scanf(" %c", &op);
@@ -15,13 +19,14 @@ int main(){
 		break;
 		case '-': printf("Subtracao = %.2f\n", n1-n2); 
 		break;
-		case '*': printf("Multiplicação = %.2f\n", n1*n2); 
+		case '*': printf("MultiplicaÃ§Ã£o = %.2f\n", n1*n2); 
 		break;
 		case '/': if(n2!=0){printf("Divisao = %.2f\n", n1/n2);} 
-		 	else{ printf("Operação Invalida!");}
+		 	else{ printf("Operacao Invalida! Impossivel dividir por zero.\n");}
 		break;
-		default: printf("Operador Invalido!");
+		default: printf("\nERRO!!! TENTE NOVAMENTE....\n");
 	}
+	}while (op != '+' && op != '-' && op != '*' && op != '/');
 	return 0;
 	
 }
